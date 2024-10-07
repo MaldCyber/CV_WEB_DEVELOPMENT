@@ -1,0 +1,479 @@
+/*
+
+Student Name: Mashaer Aldeghalbi 
+ID: 2211175 
+Section: CY1
+
+*/
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #4a4a4a;
+    line-height: 1.6;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Decorative Background Shapes disean*/
+body::before,
+body::after {
+    content: '';
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+    z-index: -1;
+}
+
+body::before {
+    top: -50%;
+    right: -50%;
+    background: radial-gradient(circle, #ffd8cc 0%, transparent 70%);
+}
+
+body::after {
+    bottom: -50%;
+    left: -50%;
+    opacity: 0.2;
+    background: radial-gradient(circle, #ff9966 0%, transparent 70%);
+}
+
+/* CV Container */
+.cv-container {
+    max-width: 800px;
+    margin: 40px auto;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decorative Corner Shapes */
+.cv-container::before,
+.cv-container::after {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(135deg, #ff9966, #ff7e5f);
+    /* Gradient */
+    opacity: 0.1;
+}
+
+.cv-container::before {
+    top: 0;
+    right: 0;
+    border-radius: 0 30px 0 100%;
+}
+
+.cv-container::after {
+    bottom: 0;
+    left: 0;
+    border-radius: 0 100% 0 30px;
+}
+
+/* Header Styles */
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 30px;
+    background: linear-gradient(135deg, rgba(255, 153, 102, 0.1), rgba(255, 126, 95, 0.1));
+    border-radius: 20px;
+    position: relative;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 5px;
+    background: linear-gradient(135deg, #ff9966, #ff7e5f);
+    /* Gradient */
+    border-radius: 5px;
+}
+
+.header h1 {
+    color: #ff9966;
+    font-size: 3em;
+    /* Corrected font size */
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Contact Info */
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 10px 0;
+    font-size: 0.7em;
+}
+
+/* Summary Text */
+.summary-text {
+    margin-top: 20px;
+    text-align: justify;
+    line-height: 1.5;
+    font-size: 0.8em;
+}
+
+/* Contact Info Links */
+.contact-info a {
+    color: #4a4a4a;
+    text-decoration: none;
+    /* Remove underline */
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+    /* Underline on hover */
+}
+
+/* Social Media Styles */
+.social-media {
+    font-size: 0.8em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+/* Social Icons */
+.social-icon {
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    transition: transform 0.2s;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Section Styles */
+.section {
+    margin: 40px 0;
+    position: relative;
+}
+
+.section-title {
+    color: #4a4a4a;
+    font-size: 1.4em;
+    margin-bottom: 25px;
+    padding-left: 20px;
+    position: relative;
+}
+
+/* Orange line before name of each section */
+.section-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 25px;
+    background: linear-gradient(135deg, #ff9966, #ff7e5f);
+    /* Gradient */
+    border-radius: 4px;
+}
+
+/* Objectives Text */
+.objectives-text {
+    text-align: justify;
+    line-height: 1.5;
+    font-size: 1em;
+}
+
+.education-item:hover {
+    transform: translateY(-5px);
+}
+
+/* Orange line before each education item */
+.education-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(135deg, #ff9966, #ff7e5f);
+    /* Gradient */
+    border-radius: 5px 0 0 5px;
+}
+
+/* Education Item Styles */
+.education-item {
+    background: linear-gradient(135deg, #ffffff, #f4f4f4);
+    padding: 25px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+/* Skills Container */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+/* Skills Category */
+.skills-category {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+/* move  */
+.skills-category:hover {
+    transform: translateY(-5px);
+}
+
+.skills-category h3 {
+    color: #ff9966;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #7b6f6f;;
+}
+
+/* Skills Lists */
+.skills-list,
+.soft-skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style: none;
+}
+
+/* Skill Item Styles */
+.skill-item,
+.soft-skill-item {
+    background: linear-gradient(135deg, #ff9966, #ff7e5f);
+    /* Gradient */
+    color: #ffffff;
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(255, 153, 102, 0.2);
+}
+
+.skill-item:hover,
+.soft-skill-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Project Item Styles */
+.project-item {
+    background: linear-gradient(135deg, #ffffff, #f4f4f4);
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    /* Space between project items */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    position: relative;
+    /* Required for the pseudo-element */
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.project-item:hover {
+    transform: translateY(-3px);
+}
+
+/* Oraing line before ecah projects */
+.project-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(135deg, #ff9966, #ff7e5f);
+    /* Gradient */
+}
+
+/* Project Report Link Styles */
+.project-item a {
+    font-size: 0.8em;
+    color: #7b6f6f;
+    text-decoration: none;
+    /* Remove underline */
+    font-weight: bold;
+}
+
+.project-item a:hover {
+    text-decoration: underline;
+    /* Underline on hover */
+    color: #ff7e5f;
+}
+
+/* Language List Styling */
+.language-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.language-item {
+    background: #ffffff;
+    padding: 15px 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.language-item:hover {
+    transform: translateY(-3px);
+}
+
+/* Language Name and Proficiency */
+.language-name {
+    font-weight: bold;
+    color: #4a4a4a;
+}
+
+.proficiency {
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-size: 0.9em;
+}
+
+.native {
+    background: linear-gradient(135deg, #ff9966, #ff7e5f);
+    /* Gradient */
+    border-radius: 10px;
+    padding: 2px 4px;
+    color: #ffffff;
+}
+
+.elementary{
+    background: #b1b0b0;
+    border-radius: 10px;
+    padding: 2px 4px;
+    color: #ffffff;
+}
+
+.intermediate {
+    background: #ffc478;
+    border-radius: 10px;
+    padding: 2px 4px;
+    color: #ffffff;
+
+}
+
+/* Certifications List */
+.cert-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    list-style: none;
+}
+
+.cert-list li {
+    background: linear-gradient(135deg, #ffffff, #f4f4f4);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.cert-list li:hover {
+    transform: translateY(-3px);
+}
+
+.cert-list li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(135deg, #ff9966, #ff7e5f);
+    /* Gradient */
+}
+
+/* Footer Styles */
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.8em;
+    color: #717171;
+}
+
+.footer p {
+    margin: 10px 0;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 576px) {
+    .cv-container {
+        padding: 20px;
+    }
+
+    .header h1 {
+        font-size: 1.5em;
+        /* Adjusted font size */
+    }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+    .cv-container {
+        padding: 30px;
+    }
+}
+
+@media (min-width: 769px) {
+    .cv-container {
+        padding: 40px;
+    }
+}
+@media (max-width: 375px) {
+    .cv-container {
+        padding: 15px;
+    }
+
+    .header h1 {
+        font-size: 1.2em; /* Smaller font size */
+    }
+
+    .summary-text,
+    .objectives-text {
+        font-size: 0.75em; 
+    }
+
+    .contact-info {
+        flex-direction: column; 
+    }
+
+    .skills-container {
+        grid-template-columns: 1fr; 
+    }
+}
